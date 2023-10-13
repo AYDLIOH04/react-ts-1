@@ -1,0 +1,18 @@
+// left-top    | center-top    | right-top  
+// left-center |   center      | right-center
+// left-bottom | center-bottom | right-bottom
+
+type HorizontalPosition = 'left' | 'center' | 'right'
+type VerticalPosition = 'top' | 'center' | 'bottom'
+
+type ToastProps = {
+  position: 
+    | Exclude<`${HorizontalPosition}-${VerticalPosition}`, 'center-center'>
+    | 'center'
+}
+
+export const Toast = ({position}: ToastProps) => {
+  return <div>Toast Notification Position - {position}</div>
+}
+
+
